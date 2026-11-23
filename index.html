@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Yu-Gi-Oh! - Duelo</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game">
+
+    <!-- =====================================================
+         HUD SUPERIOR
+    ====================================================== -->
+
+    <header id="hud">
+
+        <div class="hud-player hud-blue">
+
+            <div class="hud-label">
+                JOGADOR
+            </div>
+
+            <div class="hud-lp">
+                LP <strong>8000</strong>
+            </div>
+
+        </div>
+
+
+        <div id="turno">
+            <span>TURN</span>
+            <strong>1</strong>
+        </div>
+
+
+        <div class="hud-player hud-red">
+
+            <div class="hud-label">
+                ADVERSÁRIO
+            </div>
+
+            <div class="hud-lp">
+                LP <strong>8000</strong>
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTEÚDO DO DUELO
+    ====================================================== -->
+
+    <main id="duelo">
+
+
+        <!-- =================================================
+             COLUNA ESQUERDA
+             CEMITÉRIO
+        ================================================== -->
+
+        <aside id="painel-esquerdo">
+
+            <div class="painel-titulo">
+                CEMITÉRIO
+            </div>
+
+            <div id="cemiterio">
+
+                <!--
+                    As cartas destruídas deverão
+                    ser colocadas aqui pelo JavaScript
+                -->
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             TABULEIRO
+        ================================================== -->
+
+        <section id="tabuleiro">
+
+
+            <!-- CAMPO ADVERSÁRIO -->
+
+            <div class="lado-campo adversario">
+
+                <div class="rotulo-campo">
+                    CAMPO ADVERSÁRIO
+                </div>
+
+                <div
+                    id="campo-adversario"
+                    class="zona-monstros"
+                >
+
+                    <!--
+                        As 3 cartas adversárias deverão
+                        ser criadas pelo JavaScript
+                    -->
+
+                </div>
+
+            </div>
+
+
+
+            <!-- LINHA CENTRAL -->
+
+            <div id="linha-central">
+
+                <span>DP</span>
+                <span>SP</span>
+
+                <span class="fase-ativa">
+                    MP1
+                </span>
+
+                <span>BP</span>
+                <span>MP2</span>
+                <span>EP</span>
+
+            </div>
+
+
+
+            <!-- CAMPO DO JOGADOR -->
+
+            <div class="lado-campo jogador">
+
+                <div class="rotulo-campo">
+                    SEU CAMPO
+                </div>
+
+                <div
+                    id="campo-jogador"
+                    class="zona-monstros"
+                >
+
+                    <div class="slot"></div>
+
+                    <div class="slot"></div>
+
+                    <div class="slot"></div>
+
+                    <div class="slot"></div>
+
+                    <div class="slot"></div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         PAINEL INFERIOR
+    ====================================================== -->
+
+    <section id="painel-inferior">
+
+
+        <div id="controles">
+
+            <button id="btn-iniciar">
+                INICIAR DUELO
+            </button>
+
+
+            <div id="info">
+                Clique em INICIAR DUELO.
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             MÃO DO JOGADOR
+        ================================================== -->
+
+        <div id="area-mao">
+
+            <div class="mao-titulo">
+                SUA MÃO
+            </div>
+
+            <div id="mao">
+
+                <!--
+                    As 5 cartas deverão ser obtidas
+                    pela API e criadas via JavaScript
+                -->
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+</div>
+ <script src="script.js"></script>
+</body>
+</html>

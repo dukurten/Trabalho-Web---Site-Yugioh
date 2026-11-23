@@ -1,0 +1,1350 @@
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    margin: 0;
+
+    min-width: 100%;
+    min-height: 100%;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #07161c;
+
+    color: white;
+}
+
+
+body {
+    min-height: 100vh;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(45, 182, 205, 0.30),
+            transparent 42%
+        ),
+
+        linear-gradient(
+            180deg,
+            #1596ae 0%,
+            #12677a 18%,
+            #134b55 38%,
+            #173d3e 65%,
+            #091c20 100%
+        );
+}
+
+
+
+/* =========================================================
+   CONTAINER PRINCIPAL
+========================================================= */
+
+#game {
+    width: 100%;
+
+    min-height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding-bottom: 230px;
+}
+
+
+
+/* =========================================================
+   HUD SUPERIOR
+========================================================= */
+
+#hud {
+    height: 78px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 110px 1fr;
+
+    align-items: stretch;
+
+    position: relative;
+
+    z-index: 30;
+
+    background:
+        linear-gradient(
+            #1e3038,
+            #0a1419
+        );
+
+    border-bottom:
+        3px solid #839aa6;
+
+    box-shadow:
+        0 5px 18px
+        rgba(0, 0, 0, 0.65);
+}
+
+
+
+/* =========================================================
+   HUD - JOGADORES
+========================================================= */
+
+.hud-player {
+    position: relative;
+
+    padding:
+        8px
+        24px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-size: 1.3rem;
+
+    text-transform: uppercase;
+}
+
+
+.hud-blue {
+    background:
+
+        linear-gradient(
+            180deg,
+            #2889e7,
+            #0e56ad
+        );
+
+    border-right:
+        4px solid #0a3481;
+}
+
+
+.hud-red {
+    background:
+
+        linear-gradient(
+            180deg,
+            #e54463,
+            #9e1830
+        );
+
+    border-left:
+        4px solid #6e1025;
+}
+
+
+.hud-label {
+    font-size: 1.25rem;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        2px 2px 2px
+        rgba(0, 0, 0, 0.7);
+}
+
+
+.hud-lp {
+    color: #fff;
+
+    font-size: 1.35rem;
+}
+
+
+.hud-lp strong {
+    margin-left: 8px;
+
+    color: #fff65a;
+
+    font-size: 2rem;
+
+    text-shadow:
+        2px 2px 1px
+        #574400;
+}
+
+
+
+/* =========================================================
+   TURNO
+========================================================= */
+
+#turno {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+
+        linear-gradient(
+            #355de0,
+            #152a81
+        );
+
+    border-left:
+        4px solid #132267;
+
+    border-right:
+        4px solid #132267;
+
+    color: white;
+
+    font-weight: bold;
+
+    text-shadow:
+        2px 2px 1px black;
+}
+
+
+#turno span {
+    font-size: 0.9rem;
+
+    letter-spacing: 2px;
+}
+
+
+#turno strong {
+    font-size: 2rem;
+
+    line-height: 30px;
+}
+
+
+
+/* =========================================================
+   REGIÃO CENTRAL
+========================================================= */
+
+#duelo {
+    width: min(1240px, 98%);
+
+    margin:
+        24px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        145px 1fr;
+
+    gap: 16px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+
+/* =========================================================
+   CEMITÉRIO - COLUNA ESQUERDA
+========================================================= */
+
+#painel-esquerdo {
+    min-height: 560px;
+
+    padding: 8px;
+
+    border-radius: 6px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(18, 32, 36, 0.95),
+            rgba(4, 13, 16, 0.98)
+        );
+
+    border:
+        2px solid #566b70;
+
+    box-shadow:
+
+        inset
+        0 0 20px
+        rgba(0, 0, 0, 0.75),
+
+        0 6px 18px
+        rgba(0, 0, 0, 0.55);
+}
+
+
+.painel-titulo {
+    height: 34px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-bottom: 8px;
+
+    border-radius: 4px;
+
+    background:
+        linear-gradient(
+            #43555d,
+            #1a252a
+        );
+
+    border:
+        1px solid #71838a;
+
+    color: #d9e5e8;
+
+    font-size: 0.72rem;
+
+    font-weight: bold;
+
+    letter-spacing: 1.6px;
+}
+
+
+
+/* =========================================================
+   CEMITÉRIO
+========================================================= */
+
+#cemiterio {
+    min-height: 500px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 8px;
+
+    background:
+
+        repeating-linear-gradient(
+            -45deg,
+            rgba(22, 31, 34, 0.75),
+            rgba(22, 31, 34, 0.75) 8px,
+            rgba(12, 18, 20, 0.75) 8px,
+            rgba(12, 18, 20, 0.75) 16px
+        );
+
+    border:
+        1px solid
+        rgba(160, 180, 185, 0.25);
+
+    border-radius: 5px;
+
+    box-shadow:
+
+        inset
+        0 0 20px
+        rgba(0, 0, 0, 0.7);
+}
+
+
+#cemiterio:empty::before {
+    content: "VAZIO";
+
+    margin-top: 220px;
+
+    color: #55666c;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 3px;
+}
+
+
+
+/* =========================================================
+   TABULEIRO
+========================================================= */
+
+#tabuleiro {
+    min-height: 560px;
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-rows:
+        1fr 48px 1fr;
+
+    border:
+        3px solid
+        rgba(183, 211, 216, 0.68);
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent 49.8%,
+            rgba(194, 228, 232, 0.10) 50%,
+            transparent 50.2%
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(7, 51, 60, 0.92),
+            rgba(17, 74, 76, 0.92)
+        );
+
+    box-shadow:
+
+        inset
+        0 0 60px
+        rgba(0, 0, 0, 0.45),
+
+        0 10px 25px
+        rgba(0, 0, 0, 0.55);
+}
+
+
+
+/* =========================================================
+   TEXTURA / LINHAS DO TABULEIRO
+========================================================= */
+
+#tabuleiro::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 64px,
+            rgba(255, 255, 255, 0.02) 65px
+        );
+}
+
+
+
+/* =========================================================
+   LADOS DO CAMPO
+========================================================= */
+
+.lado-campo {
+    position: relative;
+
+    padding:
+        25px 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.lado-campo.adversario {
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(11, 51, 58, 0.80),
+            rgba(11, 42, 49, 0.70)
+        );
+}
+
+
+.lado-campo.jogador {
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(13, 51, 52, 0.72),
+            rgba(10, 38, 38, 0.92)
+        );
+}
+
+
+.rotulo-campo {
+    position: absolute;
+
+    top: 7px;
+
+    left: 12px;
+
+    font-size: 0.68rem;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color:
+        rgba(217, 238, 240, 0.55);
+}
+
+
+
+/* =========================================================
+   ZONA DE MONSTROS
+========================================================= */
+
+.zona-monstros {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 9px;
+}
+
+
+
+/* =========================================================
+   SLOTS
+========================================================= */
+
+.slot {
+    height: 170px;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border:
+        3px solid
+        rgba(163, 196, 198, 0.40);
+
+    border-radius: 5px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(214, 239, 238, 0.08),
+            rgba(31, 74, 74, 0.12)
+        );
+
+    box-shadow:
+
+        inset
+        0 0 18px
+        rgba(0, 0, 0, 0.55);
+
+    transition:
+        0.2s;
+}
+
+
+.slot::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 7px;
+
+    border:
+        1px solid
+        rgba(210, 235, 235, 0.12);
+
+    border-radius: 3px;
+}
+
+
+.slot:hover {
+    border-color:
+        #d9ed68;
+
+    box-shadow:
+
+        inset
+        0 0 18px
+        rgba(0, 0, 0, 0.55),
+
+        0 0 14px
+        rgba(226, 241, 88, 0.45);
+}
+
+
+
+/* =========================================================
+   CAMPO ADVERSÁRIO
+========================================================= */
+
+#campo-adversario {
+    min-height: 170px;
+}
+
+
+#campo-adversario .carta {
+    margin: auto;
+}
+
+
+
+/* =========================================================
+   LINHA CENTRAL / FASES
+========================================================= */
+
+#linha-central {
+    position: relative;
+
+    z-index: 8;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 3px;
+
+    background:
+
+        linear-gradient(
+            #63767d,
+            #24343a
+        );
+
+    border-top:
+        3px solid #9aaeb4;
+
+    border-bottom:
+        3px solid #111b1f;
+
+    box-shadow:
+
+        0 4px 10px
+        rgba(0, 0, 0, 0.55),
+
+        0 -4px 10px
+        rgba(0, 0, 0, 0.35);
+}
+
+
+#linha-central span {
+    min-width: 72px;
+
+    padding:
+        5px 10px;
+
+    text-align: center;
+
+    border-radius: 4px;
+
+    color:
+        rgba(200, 217, 220, 0.55);
+
+    background:
+
+        linear-gradient(
+            #63747a,
+            #34444b
+        );
+
+    font-size: 1.05rem;
+
+    font-weight: 900;
+
+    font-style: italic;
+
+    text-shadow:
+        1px 2px 1px
+        rgba(0, 0, 0, 0.8);
+}
+
+
+#linha-central .fase-ativa {
+    color: #fff642;
+
+    background:
+
+        linear-gradient(
+            #5b6b70,
+            #27373d
+        );
+
+    box-shadow:
+
+        inset
+        0 0 8px
+        rgba(255, 241, 62, 0.25);
+
+    text-shadow:
+
+        0 0 7px
+        rgba(255, 238, 53, 0.65),
+
+        2px 2px 1px
+        black;
+}
+
+
+
+/* =========================================================
+   CARTA
+========================================================= */
+
+.carta {
+    width: 112px;
+
+    position: relative;
+
+    flex-shrink: 0;
+
+    padding: 4px;
+
+    border:
+        3px solid
+        #79522d;
+
+    border-radius: 5px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #c6782e,
+            #75421e
+        );
+
+    cursor: pointer;
+
+    user-select: none;
+
+    box-shadow:
+
+        0 5px 9px
+        rgba(0, 0, 0, 0.75);
+
+    transition:
+
+        transform 0.18s,
+
+        box-shadow 0.18s,
+
+        border-color 0.18s;
+}
+
+
+.carta:hover {
+    transform:
+        translateY(-7px)
+        scale(1.04);
+
+    z-index: 30;
+
+    box-shadow:
+
+        0 12px 18px
+        rgba(0, 0, 0, 0.85),
+
+        0 0 15px
+        rgba(92, 204, 255, 0.55);
+}
+
+
+
+/* =========================================================
+   IMAGEM DA CARTA
+========================================================= */
+
+.carta img {
+    display: block;
+
+    width: 100%;
+
+    height: 116px;
+
+    object-fit: contain;
+
+    background: #111;
+
+    border-radius: 2px;
+}
+
+
+
+/* =========================================================
+   TEXTO DA CARTA
+========================================================= */
+
+.carta strong {
+    display: block;
+
+    height: 25px;
+
+    margin-top: 3px;
+
+    overflow: hidden;
+
+    color: white;
+
+    font-size: 0.58rem;
+
+    line-height: 12px;
+
+    text-align: center;
+}
+
+
+.carta .atributos {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 3px;
+
+    margin-top: 3px;
+}
+
+
+.carta .atributos span {
+    flex: 1;
+
+    padding:
+        3px 2px;
+
+    border-radius: 2px;
+
+    background:
+        rgba(0, 0, 0, 0.55);
+
+    color: #fff08a;
+
+    font-size: 0.55rem;
+
+    font-weight: bold;
+
+    text-align: center;
+}
+
+
+
+/* =========================================================
+   CARTA SELECIONADA
+========================================================= */
+
+.carta.selecionada {
+    border-color: #ffff54;
+
+    z-index: 50;
+
+    transform:
+        translateY(-10px)
+        scale(1.06);
+
+    box-shadow:
+
+        0 0 0 2px
+        rgba(255, 255, 60, 0.4),
+
+        0 0 22px
+        rgba(255, 245, 54, 0.95);
+}
+
+
+
+/* =========================================================
+   CARTA ADVERSÁRIA
+========================================================= */
+
+.carta-adversaria {
+    border-color: #863839;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #a74a42,
+            #57221f
+        );
+}
+
+
+.carta-adversaria:hover {
+    border-color: #ff5e64;
+
+    box-shadow:
+
+        0 0 20px
+        rgba(255, 60, 75, 0.7);
+}
+
+
+
+/* =========================================================
+   CARTA NO CAMPO DO JOGADOR
+========================================================= */
+
+.slot .carta {
+    width: 105px;
+}
+
+
+.slot .carta img {
+    height: 108px;
+}
+
+
+
+/* =========================================================
+   CARTAS NO CEMITÉRIO
+========================================================= */
+
+#cemiterio .carta {
+    width: 92px;
+
+    cursor: default;
+
+    opacity: 0.82;
+
+    transform: none;
+}
+
+
+#cemiterio .carta:hover {
+    transform: none;
+
+    box-shadow:
+        0 5px 9px
+        rgba(0, 0, 0, 0.75);
+}
+
+
+#cemiterio .carta img {
+    height: 98px;
+}
+
+
+#cemiterio .carta strong {
+    display: none;
+}
+
+
+#cemiterio .atributos {
+    display: none;
+}
+
+
+
+/* =========================================================
+   PAINEL INFERIOR
+========================================================= */
+
+#painel-inferior {
+    position: fixed;
+
+    left: 0;
+
+    bottom: 0;
+
+    z-index: 100;
+
+    width: 100%;
+
+    height: 215px;
+
+    pointer-events: none;
+}
+
+
+
+/* =========================================================
+   CONTROLES
+========================================================= */
+
+#controles {
+    position: absolute;
+
+    left: 20px;
+
+    bottom: 20px;
+
+    width: 280px;
+
+    pointer-events: auto;
+}
+
+
+
+/* =========================================================
+   BOTÃO INICIAR
+========================================================= */
+
+#btn-iniciar {
+    width: 100%;
+
+    padding:
+        12px 18px;
+
+    border:
+        2px solid
+        #f3dd59;
+
+    border-radius: 5px;
+
+    background:
+
+        linear-gradient(
+            #305d72,
+            #102c39
+        );
+
+    color: #fff45e;
+
+    font-size: 0.9rem;
+
+    font-weight: 900;
+
+    letter-spacing: 1.7px;
+
+    cursor: pointer;
+
+    box-shadow:
+
+        inset
+        0 0 10px
+        rgba(255, 255, 255, 0.1),
+
+        0 5px 12px
+        rgba(0, 0, 0, 0.6);
+}
+
+
+#btn-iniciar:hover {
+    background:
+
+        linear-gradient(
+            #407990,
+            #173d4d
+        );
+}
+
+
+
+/* =========================================================
+   INFORMAÇÕES
+========================================================= */
+
+#info {
+    min-height: 56px;
+
+    margin-top: 7px;
+
+    padding:
+        9px 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid #536b75;
+
+    border-radius: 5px;
+
+    background:
+        rgba(5, 17, 22, 0.93);
+
+    color: #dbe8eb;
+
+    font-size: 0.78rem;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    box-shadow:
+
+        inset
+        0 0 12px
+        rgba(0, 0, 0, 0.65);
+}
+
+
+
+/* =========================================================
+   ÁREA DA MÃO
+========================================================= */
+
+#area-mao {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 0;
+
+    transform:
+        translateX(-50%);
+
+    width: 760px;
+
+    height: 210px;
+
+    pointer-events: auto;
+}
+
+
+.mao-titulo {
+    position: absolute;
+
+    left: 50%;
+
+    top: 10px;
+
+    transform:
+        translateX(-50%);
+
+    color:
+        rgba(215, 231, 235, 0.60);
+
+    font-size: 0.65rem;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+
+
+/* =========================================================
+   MÃO - FUNDO CURVO
+========================================================= */
+
+#mao {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -22px;
+
+    transform:
+        translateX(-50%);
+
+    width: 720px;
+
+    height: 185px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-end;
+
+    padding-bottom: 8px;
+}
+
+
+#mao::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -100px;
+
+    transform:
+        translateX(-50%);
+
+    width: 760px;
+
+    height: 245px;
+
+    border-radius:
+        50% 50% 0 0;
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            rgba(26, 52, 60, 0.98),
+            rgba(7, 21, 27, 0.99) 68%
+        );
+
+    border-top:
+        2px solid
+        rgba(169, 205, 214, 0.40);
+
+    box-shadow:
+
+        0 -10px 30px
+        rgba(0, 0, 0, 0.75),
+
+        inset
+        0 10px 25px
+        rgba(95, 190, 215, 0.08);
+
+    z-index: -1;
+}
+
+
+
+/* =========================================================
+   CARTAS DA MÃO
+========================================================= */
+
+#mao .carta {
+    width: 128px;
+
+    margin-left: -18px;
+
+    transform-origin:
+        center bottom;
+
+    z-index: 10;
+}
+
+
+#mao .carta:first-child {
+    margin-left: 0;
+}
+
+
+
+/* =========================================================
+   ABERTURA EM LEQUE
+========================================================= */
+
+#mao .carta:nth-child(1) {
+    transform:
+        rotate(-12deg)
+        translateY(16px);
+}
+
+
+#mao .carta:nth-child(2) {
+    transform:
+        rotate(-6deg)
+        translateY(4px);
+}
+
+
+#mao .carta:nth-child(3) {
+    transform:
+        translateY(-2px);
+}
+
+
+#mao .carta:nth-child(4) {
+    transform:
+        rotate(6deg)
+        translateY(4px);
+}
+
+
+#mao .carta:nth-child(5) {
+    transform:
+        rotate(12deg)
+        translateY(16px);
+}
+
+
+
+/* =========================================================
+   HOVER DA MÃO
+========================================================= */
+
+#mao .carta:hover {
+    transform:
+        translateY(-24px)
+        scale(1.10);
+
+    z-index: 50;
+}
+
+
+
+/* =========================================================
+   SELEÇÃO NA MÃO
+========================================================= */
+
+#mao .carta.selecionada {
+    transform:
+        translateY(-30px)
+        scale(1.10);
+
+    z-index: 60;
+}
+
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    #duelo {
+        grid-template-columns:
+            110px 1fr;
+    }
+
+
+    .slot {
+        height: 150px;
+    }
+
+
+    .zona-monstros {
+        gap: 5px;
+    }
+
+
+    #linha-central span {
+        min-width: 55px;
+
+        font-size: 0.85rem;
+    }
+
+
+    #area-mao {
+        width: 620px;
+    }
+
+
+    #mao {
+        width: 600px;
+    }
+
+
+    #mao .carta {
+        width: 105px;
+    }
+
+}
